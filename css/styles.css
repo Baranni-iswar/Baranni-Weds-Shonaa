@@ -102,6 +102,22 @@ img.framed {
     right: 60px;
 }
 
+.music {
+    opacity: 40%;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    z-index: 999;
+    width: 40%;
+    display: inline-block;
+    bottom: 20px;
+    right: 30%;
+}
+
 /* Computer */
 @media screen and (min-width: 900px) {
     .nvbar {

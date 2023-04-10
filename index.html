@@ -41,6 +41,7 @@
     </div>
 
     <!-- header image -->
+    <p class="music">Tap anywhere to start music.!</p>
     <div>
         <img class="main" src="images/Mobile Screenshot 2023-04-08 120344.png" width="100%" alt="">
         <img class="main2" src="images/Screenshot 2023-04-08 120344.png" width="100%" alt="">
@@ -70,7 +71,7 @@
     <!-- save the date -->
 
     <div style="color: black">
-        <div style="background-image: url(images/Dam.png); height: 850px; opacity: 80%;">
+        <div style="background-image: url(images/Dam.png); height: 850px; opacity: 100%;">
             <img class="gif" src="images/savethedate_wh.gif" width="250px" style="padding-top: 12rem; padding-bottom: 8rem;" alt="">
             <br>
             <p id="date">April 25th & 26th 2023</p>
@@ -185,6 +186,7 @@
         function musicPlay() {
         playAudio();
         document.removeEventListener('click', musicPlay);
+        $(".music").css("display","none");
         }
 
 	</script>
