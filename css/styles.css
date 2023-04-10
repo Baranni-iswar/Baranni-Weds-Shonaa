@@ -158,6 +158,10 @@ img.framed {
         opacity: 20%;
     }
 
+    div {
+        border-right: 0px!important;
+    }
+
     .nvbarlogo {
         font-size: 0.8rem!important;
         padding: 0 0.3rem 0 0.3rem!important;
