@@ -1,14 +1,171 @@
-body {
-    background-color: #111;
-    color: azure;
-}
-
-h1 {
-    font-size: 93px;
-    padding: auto;
+p {
     text-align: center;
 }
 
-p {
-    text-align: center;     
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    z-index: 3;
+  }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+}
+.dropdown-content a:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-size: 5rem;
+    padding: 10rem 0 4rem 0;
+    text-align: center;
+    font-family: 'Kaushan Script';
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.text {
+    font-style: calibri; 
+    margin: 80px 20px 0 40px; 
+    font-size: 1.2rem;
+    font-style: italic; 
+    padding-bottom: 8rem;
+}
+
+.aboutname {
+    font-family: 'Allura'; 
+    padding: 0 0 0 0;
+    font-size: 3.9rem; 
+    text-align: right;
+}
+
+.anleft {
+    text-align: left;
+}
+
+.anright {
+    text-align: right;
+}
+
+img.framed {
+    --s: 10px;
+    /* control the size */
+    border: calc(2*var(--s)) solid #0000;
+    outline: 1px solid #000;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, #0000 25%, #000 0);
+}
+
+.slim {
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+
+.floating-button {
+    display: inline-block;
+    background-color: currentblackColor;
+    opacity: 20%;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.up {
+    right: 60px;
+}
+
+/* Computer */
+@media screen and (min-width: 900px) {
+    .nvbar {
+        position: fixed;
+        background-color: white;
+        opacity: 20%;
+    }
+
+    img.logo {
+        width: 15%;
+    }
+
+    .main {
+        display: none;
+    }
+
+    .nvbarlogo {
+        font-size: 1.5rem;
+    }
+
+    img.portrait {
+        float: right; width: 400px; padding: 20px;
+    }
+
+    img.portleft {
+        float: left; width: 400px; padding: 20px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+    .nvbar {
+        position: fixed;
+        background-color: white;
+        opacity: 20%;
+    }
+
+    a.nvbarlogo {
+        font-size: 0.2rem;
+    }
+    img.logo {
+        width: 50%;
+    }
+
+    img.portleft {
+        width: 300px; padding: 10px;
+    }
+
+    img.portrait {
+        width: 300px; padding: 10px;
+    }
+
+    .main2 {
+        display: none;
+    }
+    .anright {
+        text-align: center;
+    }
+
+    .anleft {
+        text-align: center;
+    }
+
+    .gif {
+        width: 200px;
+    }
 }
