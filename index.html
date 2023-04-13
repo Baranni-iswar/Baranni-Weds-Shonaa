@@ -159,7 +159,7 @@
         <h1 style="margin-bottom: 0px;">Gallery</h1>
         <div class="gallery" style="width: 90%; display: flex; margin: 0 auto">
             <div class="col-4">
-                <img src="images/Gallery/ADG09830.JPG" class="gallery-pic" onclick="">
+                <img src="images/Gallery/ADG09830.JPG" class="gallery-pic">
                 <img src="images/Gallery/RDW08595.JPG" class="gallery-pic">
                 <img src="images/Gallery/ADG00333.JPG" class="gallery-pic">
                 <img src="images/Gallery/RDW08384.JPG" class="gallery-pic">
@@ -184,24 +184,41 @@
                 <img src="images/Gallery/RDW09688.JPG" class="gallery-pic">
             </div>
         </div>
+        <div style="text-align: center;">More pictures and videos coming soon...</div>
     </div>
 
     <!-- Opened Image -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
+        <span class="close prev">
+            <div class="butn prev">
+                <img src="https://img.icons8.com/ios-filled/256/back.png" width="20px" style="margin: auto 0; padding: 8px 0 0 7px;">
+            </div>
+        </span>
+        <span class="close next">
+            <div class="butn next">
+                <img src="https://img.icons8.com/ios-filled/256/forward--v1.png" width="20px" style="margin: auto 0; padding: 8px 0 0 8px;">
+            </div>
+        </span>
         <img class="modal-content" id="img01">
     </div>
 
     <!-- Thank you -->
     <div class="p-4 main2" style="background-image: url('images/RDW08434.JPG'); background-size: cover; height: 900px;">
+        <p style="font-size: 0.6rem;">&copy; 2023 Baranni and Shonaa. All rights reserved.</p>
         <img class="gif" src="images/thank you.gif" width="250px" style="padding-top: 10rem;">
     </div>
 
     <div class="p-4 main" style="background-image: url('images/RDW08434 Copy.JPG'); background-size: cover; height: 900px;">
+        <p style="font-size: 0.6rem;">&copy; 2023 Baranni and Shonaa. All rights reserved.</p>
         <img class="gif" src="images/thank you.gif" width="250px" style="padding-top: 10rem;">
     </div>
 
+
+    <!-- script -->
+    <!-- script -->
     <script>
+        // play music
 		var audio = document.getElementById("bgm");
 		
 		function playAudio() {
@@ -212,6 +229,7 @@
                 document.getElementById("bg").src = "https://cdn-icons-png.flaticon.com/512/175/175681.png";}
 		}
 
+        // tap to play music
         document.addEventListener('click', musicPlay);
         function musicPlay() {
         playAudio();
@@ -219,15 +237,44 @@
         $(".music").css("display","none");
         }
 
-        // Get the modal
-        var modal = document.getElementById("myModal");
+        // add click listener to all pics
+        const imgs = document.querySelectorAll(".gallery-pic");
+		imgs.forEach(img => {
+			img.addEventListener("click", imgmax);
+		});
+        const butns = document.querySelectorAll(".butn");
+        butns.forEach(butn => {
+            butn.addEventListener("click", nav);
+        })
 
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
+        // maximize images
+        function imgmax (event) {
+            var img = this.src;
+            console.log(img);
+            img = "images/full/" + img.substr(-12);
+            var modalImg = document.getElementById("img01");
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+            modalImg.src = img;
+        }
+
+        function nav() {
+            const imgs = document.querySelectorAll(".gallery-pic");
+            var modalImg = document.getElementById("img01");
+            var i = 0;
+            for (const img of imgs) {
+                if (img.src.substr(-12) == modalImg.src.substr(-12)) {
+                    break;
+                }
+                else {
+                    i= i+1;
+                }
+            };
+            if (i == imgs.length-1 && this.classList.contains("next")) {i = 0;}
+            else if (i == 0 && this.classList.contains("prev")) {i = imgs.length - 1;}
+            else if (this.classList.contains("prev")) {i = i-1;}
+            else {i = i+1;}
+            modalImg.src = "images/full/" + imgs[i].src.substr(-12);
         }
 
         // Get the <span> element that closes the modal
@@ -235,6 +282,7 @@
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() { 
+        var modal = document.getElementById("myModal");
         modal.style.display = "none";
         }
 

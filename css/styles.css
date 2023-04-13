@@ -118,13 +118,13 @@ img.framed {
     right: 30%;
 }
 
-.gallery-pic:hover {opacity: 0.7;}
+.gallery-pic:hover, .gallery-pic:focus {opacity: 0.7;}
 
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 1%; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -138,8 +138,9 @@ img.framed {
   .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    max-width: 80%;
+    width: auto;
+    height: 99%;
   }
   
   /* Add Animation */
@@ -167,8 +168,29 @@ img.framed {
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
-    font-weight: bold;
     transition: 0.3s;
+  }
+
+  .close.prev {
+    top: 50%;
+    left: 4%;
+  }
+
+  .close.next {
+    top: 50%;
+    right: 4%;
+  }
+
+  .butn {
+    display: inline-block;
+    background-color: white;
+    color: white;
+    opacity: 80%;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    width: 30px;
+    height: 30px;
   }
   
   .close:hover,
