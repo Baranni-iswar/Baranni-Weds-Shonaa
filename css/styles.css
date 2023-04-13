@@ -132,33 +132,20 @@ img.framed {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    vertical-align: center;
   }
   
   /* Modal Content (image) */
   .modal-content {
     margin: auto;
     display: block;
-    max-width: 80%;
+    max-width: 90%;
     width: auto;
-    height: 99%;
-  }
-  
-  /* Add Animation */
-  .modal-content {  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-  
-  @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
+    max-height: 98%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   
   /* The Close Button */
@@ -169,16 +156,21 @@ img.framed {
     color: #f1f1f1;
     font-size: 40px;
     transition: 0.3s;
+    z-index: 3;
   }
 
   .close.prev {
     top: 50%;
     left: 4%;
+    opacity: 0.5;
+    z-index: 3;
   }
 
   .close.next {
     top: 50%;
     right: 4%;
+    opacity: 0.5;
+    z-index: 3;
   }
 
   .butn {
